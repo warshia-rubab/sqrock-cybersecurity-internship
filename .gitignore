@@ -1,0 +1,51 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+venv/
+env/
+ENV/
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+*.log
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Virtual Environment
+venv/
+env/
+
+# Data files (keep structure but not content)
+*.json
+*.md
+!README.md
+!*.md
+
+# Screenshots (keep structure but not content)
+screenshots/*.png
+!screenshots/.gitkeep
+
+# Temporary files
+*.tmp
+*.temp
+.DS_Store
+Thumbs.db
+
+# Reports (keep structure but not content)
+reports/*.md
+reports/*.pdf
+data/*.json
+
+# Secrets
+*.env
+*.secret
+config.py
