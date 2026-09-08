@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PhishShield -  CyberSecurity</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Sidebar Navigation -->
+    <nav class="sidebar">
+        <div class="sidebar-brand">
+            <span class="brand-icon">🛡️</span>
+            <span class="brand-text">PhishShield</span>
+        </div>
+        <ul class="sidebar-menu">
+            <li class="menu-item active">
+                <span class="menu-icon">🔍</span>
+                <span>Analyzer</span>
+            </li>
+            <li class="menu-item">
+                <span class="menu-icon">📊</span>
+                <span>Reports</span>
+            </li>
+            <li class="menu-item">
+                <span class="menu-icon">⚙️</span>
+                <span>Settings</span>
+            </li>
+        </ul>
+        <div class="sidebar-footer">
+            <span class="status-dot"></span>
+            <span>Day 3</span>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Top Header -->
+        <header class="top-header">
+            <div class="header-left">
+                <h1>URL Analyzer</h1>
+                <span class="header-badge">Phishing Detection Engine v3.0</span>
+            </div>
+            <div class="header-right">
+                <span class="header-status">🟢 Online</span>
+            </div>
+        </header>
+
+        <!-- Stats Cards Row -->
+        <div class="stats-row">
+            <div class="stat-card">
+                <div class="stat-icon-wrapper" style="background: rgba(0, 255, 100, 0.1);">
+                    <span>🌐</span>
+                </div>
+                <div class="stat-info">
+                    <span class="stat-number" id="totalScans">0</span>
+                    <span class="stat-label">Total Scans</span>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon-wrapper" style="background: rgba(255, 68, 68, 0.1);">
+                    <span>🚨</span>
+                </div>
+                <div class="stat-info">
+                    <span class="stat-number" id="threatsFound">0</span>
+                    <span class="stat-label">Threats Found</span>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon-wrapper" style="background: rgba(0, 200, 255, 0.1);">
+                    <span>✅</span>
+                </div>
+                <div class="stat-info">
+                    <span class="stat-number" id="safeUrls">0</span>
+                    <span class="stat-label">Safe URLs</span>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon-wrapper" style="background: rgba(255, 200, 0, 0.1);">
+                    <span>⚡</span>
+                </div>
+                <div class="stat-info">
+                    <span class="stat-number" id="avgScore">0</span>
+                    <span class="stat-label">Avg Risk Score</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Analyzer Card -->
+        <div class="analyzer-card">
+            <div class="analyzer-header">
+                <h2>🔍 URL Analysis</h2>
+                <p>Enter a URL to check for phishing indicators</p>
+            </div>
+            <div class="analyzer-body">
+                <div class="input-wrapper">
+                    <div class="input-group">
+                        <span class="input-prefix">https://</span>
+                        <input type="text" id="urlInput" placeholder="Enter domain or full URL" class="url-input">
+                        <button id="analyzeButton" class="analyze-btn">
+                            <span class="btn-text">Analyze</span>
+                            <span class="btn-icon">→</span>
+                        </button>
+                    </div>
+                    <div class="quick-tags">
+                        <span class="quick-label">Quick Test:</span>
+                        <button class="tag-btn safe" data-url="https://github.com">Safe</button>
+                        <button class="tag-btn danger" data-url="https://paypal-login.evil.com/verify">Phishing</button>
+                        <button class="tag-btn warning" data-url="http://login-bank-verification.top">Suspicious</button>
+                        <button class="tag-btn info" data-url="https://193.23.45.6/login">IP</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Results Dashboard -->
+        <div id="resultsSection" class="results-dashboard hidden">
+            <!-- Risk Gauge -->
+            <div class="risk-gauge-card">
+                <div class="gauge-container">
+                    <div class="gauge-ring">
+                        <div class="gauge-progress" id="gaugeProgress"></div>
+                        <div class="gauge-center">
+                            <span class="gauge-score" id="gaugeScore">0</span>
+                            <span class="gauge-label">Risk Score</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="risk-details">
+                    <div class="risk-level-badge" id="riskLevelBadge">
+                        <span class="level-dot"></span>
+                        <span class="level-text">LOW</span>
+                    </div>
+                    <div class="risk-url" id="riskUrl">-</div>
+                </div>
+            </div>
+
+            <!-- Indicators Grid -->
+            <div class="indicators-grid-card">
+                <h3>Detection Indicators</h3>
+                <div class="indicators-grid" id="indicatorsGrid">
+                    <!-- Dynamically populated -->
+                </div>
+            </div>
+
+            <!-- Recommendations -->
+            <div class="recommendations-card">
+                <h3>Security Recommendations</h3>
+                <ul class="recommendations-list" id="recommendationsList">
+                    <!-- Dynamically populated -->
+                </ul>
+            </div>
+
+            <!-- Detailed Breakdown -->
+            <div class="breakdown-card">
+                <h3>Score Breakdown</h3>
+                <div class="breakdown-bars" id="breakdownBars">
+                    <!-- Dynamically populated -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Error Section -->
+        <div id="errorSection" class="error-card hidden">
+            <div class="error-icon">⚠️</div>
+            <h3>Analysis Failed</h3>
+            <p id="errorMessage">Something went wrong. Please try again.</p>
+            <button id="retryButton" class="retry-btn">Try Again</button>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>SQR CyberSecurity Internship — Day 3: Phishing Detection</p>
+            <p class="footer-sub">🔒 Educational Use Only | All scans with explicit authorization</p>
+        </footer>
+    </main>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

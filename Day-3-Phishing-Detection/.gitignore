@@ -1,0 +1,52 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+venv/
+env/
+ENV/
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+*.log
+
+# Virtual Environment
+venv/
+env/
+Day-3-Phishing-Detection/venv/
+
+# Data files
+*.json
+*.md
+!README.md
+reports/*.md
+data/*.json
+
+# Screenshots
+screenshots/*.png
+!screenshots/.gitkeep
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Temporary files
+*.tmp
+*.temp
+.DS_Store
+Thumbs.db
+
+# Secrets
+*.env
+*.secret
+config.py
+
+# Logs
+*.log
+phishing_detector.log
