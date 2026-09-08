@@ -60,25 +60,21 @@ OSINT (Open-Source Intelligence) is the collection and analysis of information f
 
 # 📸 Screenshots
 
-### Professional Dashboard
+### Professional Dashboard:
 <p align="center">
   <img src="Dashoard.png" alt="Dashboard" width="90%">
 </p>
 
-### Live Scan in Action
+### Live Scan in Action:
 <p align="center">
   <img src="Working.png" alt="Working" width="90%">
 </p>
 
-### Detailed Results
+### Detailed Results:
 <p align="center">
   <img src="assesments.png" alt="assessments" width="90%">
 </p>
 
-### Google.com Scan Results
-<p align="center">
-  <img src="google_scan.png" alt="Google Scan" width="90%">
-</p>
 
 ---
 
@@ -113,7 +109,7 @@ docker run -p 5000:5000 osint-scanner
 
 ```
 
-#### 💻 Usage
+### 💻 Usage
 
 ```
 # Web Interface
