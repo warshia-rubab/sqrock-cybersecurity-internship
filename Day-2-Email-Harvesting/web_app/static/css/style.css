@@ -1,0 +1,486 @@
+/* ============================================
+   DAY 2: EMAIL HARVESTER - UNIQUE DESIGN
+   Color Scheme: Purple & Teal Gradient
+   ============================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: #0f0a1a;
+    color: #e0d8f0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-image: 
+        radial-gradient(ellipse at 10% 20%, rgba(120, 80, 200, 0.08) 0%, transparent 50%),
+        radial-gradient(ellipse at 90% 80%, rgba(0, 200, 180, 0.06) 0%, transparent 50%);
+}
+
+/* ===== HEADER - Gradient Purple ===== */
+.header {
+    background: linear-gradient(135deg, #1a0f2e 0%, #2d1b4e 50%, #1a2a3f 100%);
+    border-bottom: 2px solid rgba(120, 80, 200, 0.3);
+    padding: 16px 40px;
+    position: relative;
+    overflow: hidden;
+}
+
+.header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(90deg, 
+        transparent 0%, 
+        rgba(120, 80, 200, 0.05) 50%, 
+        transparent 100%);
+    animation: shimmer 4s infinite;
+}
+
+@keyframes shimmer {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+
+.header-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.logo-icon {
+    font-size: 30px;
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+}
+
+.logo-text {
+    font-size: 24px;
+    font-weight: 800;
+    background: linear-gradient(135deg, #a78bfa 0%, #34d399 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: -0.5px;
+}
+
+.header-badge .badge {
+    background: rgba(120, 80, 200, 0.2);
+    color: #a78bfa;
+    padding: 6px 18px;
+    border-radius: 20px;
+    font-size: 13px;
+    border: 1px solid rgba(120, 80, 200, 0.3);
+    font-weight: 500;
+}
+
+/* ===== CONTAINER ===== */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    flex: 1;
+    width: 100%;
+}
+
+/* ===== HERO - Different Style ===== */
+.hero {
+    text-align: center;
+    margin-bottom: 40px;
+    padding: 30px 0;
+}
+
+.hero h1 {
+    font-size: 40px;
+    font-weight: 800;
+    background: linear-gradient(135deg, #a78bfa 0%, #34d399 50%, #60a5fa 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 12px;
+    letter-spacing: -0.5px;
+}
+
+.hero p {
+    color: #8b7aa8;
+    font-size: 18px;
+    font-weight: 300;
+}
+
+/* ===== SEARCH SECTION - Glow Effect ===== */
+.search-section {
+    max-width: 700px;
+    margin: 0 auto 30px;
+}
+
+.input-group {
+    display: flex;
+    gap: 12px;
+    background: #1a102e;
+    padding: 8px;
+    border-radius: 16px;
+    border: 2px solid rgba(120, 80, 200, 0.2);
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+}
+
+.input-group:focus-within {
+    border-color: #a78bfa;
+    box-shadow: 0 0 40px rgba(120, 80, 200, 0.15), 0 4px 30px rgba(0, 0, 0, 0.3);
+}
+
+.url-input {
+    flex: 1;
+    background: transparent;
+    border: none;
+    padding: 14px 20px;
+    color: #e0d8f0;
+    font-size: 16px;
+    outline: none;
+    font-weight: 400;
+}
+
+.url-input::placeholder {
+    color: #4a3a5a;
+    font-weight: 300;
+}
+
+.harvest-button {
+    background: linear-gradient(135deg, #7c3aed 0%, #34d399 100%);
+    border: none;
+    padding: 14px 32px;
+    border-radius: 12px;
+    color: #0a0a0a;
+    font-weight: 700;
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+    text-shadow: 0 1px 2px rgba(255,255,255,0.2);
+}
+
+.harvest-button:hover {
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 0 8px 30px rgba(120, 80, 200, 0.4);
+}
+
+.harvest-button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none !important;
+}
+
+.security-notice {
+    text-align: center;
+    margin-top: 14px;
+    font-size: 13px;
+    color: #ffffff;
+    font-weight: 300;
+}
+
+/* ===== PROGRESS - Unique Design ===== */
+.progress-section {
+    max-width: 700px;
+    margin: 30px auto;
+}
+
+.progress-card {
+    background: #1a102e;
+    padding: 28px;
+    border-radius: 16px;
+    border: 1px solid rgba(120, 80, 200, 0.15);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+}
+
+.progress-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 14px;
+}
+
+.progress-title {
+    color: #8b7aa8;
+    font-weight: 500;
+}
+
+.progress-percent {
+    color: #a78bfa;
+    font-weight: 700;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 8px;
+    background: #2a1a3e;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #7c3aed 0%, #34d399 100%);
+    width: 0%;
+    transition: width 0.5s ease;
+}
+
+.progress-status {
+    margin-top: 14px;
+    font-size: 14px;
+    color: #4a3a5a;
+    font-weight: 300;
+}
+
+/* ===== RESULTS - Card Style ===== */
+.results-section {
+    animation: fadeIn 0.6s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ===== STATS GRID - Glassmorphism ===== */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+    margin-bottom: 30px;
+}
+
+.stat-card {
+    background: linear-gradient(135deg, rgba(26, 16, 46, 0.9) 0%, rgba(26, 42, 63, 0.6) 100%);
+    padding: 20px 24px;
+    border-radius: 16px;
+    border: 1px solid rgba(120, 80, 200, 0.1);
+    backdrop-filter: blur(10px);
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    transition: all 0.3s ease;
+}
+
+.stat-card:hover {
+    border-color: rgba(120, 80, 200, 0.3);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+}
+
+.stat-icon {
+    font-size: 28px;
+    background: rgba(120, 80, 200, 0.15);
+    padding: 10px;
+    border-radius: 12px;
+}
+
+.stat-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.stat-label {
+    font-size: 12px;
+    color: #6a5a7a;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-weight: 600;
+}
+
+.stat-value {
+    font-size: 24px;
+    font-weight: 700;
+    color: #e0d8f0;
+    margin-top: 2px;
+    background: linear-gradient(135deg, #a78bfa 0%, #34d399 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* ===== EMAIL LIST - Purple Theme ===== */
+.email-list-section {
+    background: linear-gradient(135deg, rgba(26, 16, 46, 0.9) 0%, rgba(26, 42, 63, 0.6) 100%);
+    padding: 24px;
+    border-radius: 16px;
+    border: 1px solid rgba(120, 80, 200, 0.1);
+    margin-bottom: 30px;
+    backdrop-filter: blur(10px);
+}
+
+.email-list-section h3 {
+    color: #a78bfa;
+    font-weight: 600;
+    margin-bottom: 16px;
+    font-size: 18px;
+}
+
+.email-list {
+    max-height: 300px;
+    overflow-y: auto;
+    background: rgba(15, 10, 26, 0.5);
+    padding: 15px;
+    border-radius: 12px;
+    border: 1px solid rgba(120, 80, 200, 0.05);
+}
+
+.email-list ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.email-list li {
+    padding: 10px 14px;
+    border-bottom: 1px solid rgba(120, 80, 200, 0.05);
+    font-family: 'Courier New', monospace;
+    color: #a78bfa;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    border-radius: 4px;
+}
+
+.email-list li:hover {
+    background: rgba(120, 80, 200, 0.08);
+    padding-left: 20px;
+}
+
+/* ===== DOWNLOAD SECTION - Unique ===== */
+.download-section {
+    background: linear-gradient(135deg, rgba(26, 16, 46, 0.9) 0%, rgba(26, 42, 63, 0.6) 100%);
+    padding: 28px;
+    border-radius: 16px;
+    border: 1px solid rgba(120, 80, 200, 0.1);
+    text-align: center;
+    backdrop-filter: blur(10px);
+}
+
+.download-section h3 {
+    color: #a78bfa;
+    font-weight: 600;
+    margin-bottom: 16px;
+}
+
+.download-buttons {
+    display: flex;
+    gap: 14px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.download-btn {
+    padding: 12px 28px;
+    border-radius: 12px;
+    border: 1px solid rgba(120, 80, 200, 0.2);
+    background: rgba(15, 10, 26, 0.5);
+    color: #e0d8f0;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 14px;
+    backdrop-filter: blur(5px);
+}
+
+.download-btn:hover {
+    border-color: #a78bfa;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(120, 80, 200, 0.15);
+}
+
+.download-btn.primary {
+    background: linear-gradient(135deg, #7c3aed 0%, #34d399 100%);
+    border: none;
+    color: #0a0a0a;
+    font-weight: 700;
+}
+
+.download-btn.primary:hover {
+    box-shadow: 0 8px 30px rgba(120, 80, 200, 0.3);
+    transform: translateY(-2px) scale(1.02);
+}
+
+/* ===== ERROR ===== */
+.error-section {
+    max-width: 600px;
+    margin: 40px auto;
+}
+
+.error-card {
+    background: #1a102e;
+    padding: 40px;
+    border-radius: 16px;
+    border: 1px solid #e74c3c;
+    text-align: center;
+}
+
+.error-icon { font-size: 48px; display: block; margin-bottom: 16px; }
+.error-card h3 { color: #e74c3c; margin-bottom: 8px; }
+.error-card p { color: #8b7aa8; margin-bottom: 20px; }
+
+.retry-btn {
+    background: #e74c3c;
+    border: none;
+    padding: 10px 30px;
+    border-radius: 10px;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.retry-btn:hover {
+    background: #c0392b;
+    transform: translateY(-2px);
+}
+
+/* ===== FOOTER ===== */
+.footer {
+    text-align: center;
+    padding: 24px;
+    border-top: 1px solid rgba(120, 80, 200, 0.1);
+    color: #4a3a5a;
+    font-size: 14px;
+}
+
+.footer-sub {
+    font-size: 12px;
+    margin-top: 4px;
+    opacity: 0.7;
+}
+
+.hidden { display: none !important; }
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+    .header { padding: 12px 20px; }
+    .logo-text { font-size: 18px; }
+    .logo-icon { font-size: 24px; }
+    .hero h1 { font-size: 28px; }
+    .input-group { flex-direction: column; padding: 6px; }
+    .url-input { padding: 12px 16px; }
+    .harvest-button { justify-content: center; }
+    .stats-grid { grid-template-columns: 1fr 1fr; }
+    .badge { font-size: 11px; padding: 4px 12px; }
+    .stat-card { padding: 14px 16px; }
+    .stat-value { font-size: 20px; }
+    .download-btn { padding: 10px 20px; font-size: 13px; }
+}

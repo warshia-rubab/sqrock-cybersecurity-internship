@@ -1,0 +1,7 @@
+requests==2.31.0
+beautifulsoup4==4.12.2
+lxml==4.9.3
+Flask==2.3.2
+Flask-Cors==4.0.0
+pandas==2.0.3
+python-whois==0.7.3
