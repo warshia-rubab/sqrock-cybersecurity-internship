@@ -17,7 +17,7 @@ build/
 # Virtual Environment
 venv/
 env/
-Day-3-Phishing-Detection/venv/
+Day-2-Email-Harvesting/venv/
 
 # Data files
 *.json
@@ -49,4 +49,4 @@ config.py
 
 # Logs
 *.log
-phishing_detector.log
+email_harvester.log
