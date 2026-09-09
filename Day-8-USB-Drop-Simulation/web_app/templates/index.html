@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>USB Attack Simulator - SQR CyberSecurity</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="dashboard">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-left">
+                <span class="logo-icon">💾</span>
+                <span class="logo-text">USB FORENSICS</span>
+            </div>
+            <div class="header-right">
+                <span class="status-badge">● LIVE</span>
+                <span class="version-badge">v2.0</span>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main>
+            <!-- Input Section -->
+            <div class="input-section">
+                <div class="input-card">
+                    <h2>💾 USB Drop Attack Simulation</h2>
+                    <p>Simulate a USB insertion with different payload types</p>
+                    <div class="payload-buttons">
+                        <button class="payload-btn recon" data-payload="recon">
+                            <span class="icon">🔍</span>
+                            <span>Reconnaissance</span>
+                            <span class="badge">LOW</span>
+                        </button>
+                        <button class="payload-btn credential" data-payload="credential">
+                            <span class="icon">🔑</span>
+                            <span>Credential Harvesting</span>
+                            <span class="badge">HIGH</span>
+                        </button>
+                        <button class="payload-btn backdoor" data-payload="backdoor">
+                            <span class="icon">🚪</span>
+                            <span>Backdoor Installation</span>
+                            <span class="badge">CRITICAL</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Results -->
+            <div id="resultsSection" class="results-section hidden">
+                <!-- USB Info -->
+                <div class="usb-card">
+                    <div class="usb-icon">💾</div>
+                    <div class="usb-info">
+                        <h3 id="usbName">USB_DRIVE_2024</h3>
+                        <p id="usbSize">64GB</p>
+                        <p id="usbFormat">FAT32</p>
+                    </div>
+                    <div class="usb-severity" id="usbSeverity">
+                        <span class="severity-label">Severity</span>
+                        <span class="severity-value">LOW</span>
+                    </div>
+                </div>
+
+                <!-- System Info -->
+                <div class="system-card">
+                    <h3>🖥️ System Information</h3>
+                    <div class="system-grid" id="systemGrid"></div>
+                </div>
+
+                <!-- Recon Data -->
+                <div class="recon-card">
+                    <h3>📊 Reconnaissance Data</h3>
+                    <div class="recon-grid" id="reconGrid"></div>
+                </div>
+
+                <!-- Red Flags -->
+                <div class="flags-card">
+                    <h3>🚨 Red Flags</h3>
+                    <ul id="flagsList" class="info-list"></ul>
+                </div>
+
+                <!-- Defense Tips -->
+                <div class="defense-card">
+                    <h3>🛡️ Defense Tips</h3>
+                    <ul id="defenseList" class="info-list"></ul>
+                </div>
+            </div>
+
+            <!-- Error -->
+            <div id="errorSection" class="error-section hidden">
+                <div class="error-card">
+                    <span class="error-icon">⚠️</span>
+                    <h3>Simulation Failed</h3>
+                    <p id="errorMessage">Please try again.</p>
+                    <button id="retryBtn" class="retry-btn">Try Again</button>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>SQR CyberSecurity Internship — Day 8: USB Drop Attack Simulation</p>
+            <p class="footer-sub">🔒 Educational Use Only | All scans with explicit authorization</p>
+        </footer>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
