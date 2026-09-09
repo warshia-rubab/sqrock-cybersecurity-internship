@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vishing Generator - SQR CyberSecurity</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="terminal">
+        <!-- Header -->
+        <div class="terminal-header">
+            <div class="terminal-controls">
+                <span class="dot red"></span>
+                <span class="dot yellow"></span>
+                <span class="dot green"></span>
+            </div>
+            <span class="terminal-title">vishing-generator.sh</span>
+            <span class="terminal-status">● ONLINE</span>
+        </div>
+
+        <!-- Terminal Body -->
+        <div class="terminal-body">
+            <!-- Banner -->
+            <div class="ascii-banner">
+                <pre>
+╔══════════════════════════════════════════════════════════╗
+║  ██╗  ██╗███████╗██████╗  ██████╗ ██╗  ██╗            ║
+║  ██║  ██║██╔════╝██╔══██╗██╔═══██╗██║ ██╔╝            ║
+║  ███████║█████╗  ██████╔╝██║   ██║█████╔╝             ║
+║  ██╔══██║██╔══╝  ██╔══██╗██║   ██║██╔═██╗             ║
+║  ██║  ██║███████╗██║  ██║╚██████╔╝██║  ██╗            ║
+║  ╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝ ╚═════╝ ╚═╝  ╚═╝            ║
+╚══════════════════════════════════════════════════════════╝
+                </pre>
+            </div>
+
+            <div class="terminal-output" id="output">
+                <p class="prompt"><span class="user">root@sqrock</span>:<span class="path">~/day4</span>$ <span class="command">./vishing-generator --help</span></p>
+                <p class="output-text">📋 Social Engineering Script Generator v2.0</p>
+                <p class="output-text">🔒 Educational Use Only - Authorized Environments</p>
+                <p class="output-text">📌 Available Categories: [it_support] [bank] [government]</p>
+                <p class="prompt"><span class="user">root@sqrock</span>:<span class="path">~/day4</span>$ <span class="command blink">_</span></p>
+            </div>
+
+            <!-- Input Section -->
+            <div class="input-section">
+                <div class="input-row">
+                    <span class="prompt"><span class="user">root@sqrock</span>:<span class="path">~/day4</span>$ </span>
+                    <input type="text" id="commandInput" class="command-input" placeholder="Enter category (it_support, bank, government)...">
+                </div>
+                <div class="quick-buttons">
+                    <button class="cmd-btn" data-category="it_support">📞 IT Support</button>
+                    <button class="cmd-btn" data-category="bank">🏦 Bank</button>
+                    <button class="cmd-btn" data-category="government">🏛️ Government</button>
+                    <button class="cmd-btn" data-category="smishing">📱 Smishing</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="terminal-footer">
+            <span class="footer-status">● SYSTEM: ONLINE</span>
+            <span class="footer-status">● USER: awareness_training</span>
+            <span class="footer-status">● VERSION: 2.0</span>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
