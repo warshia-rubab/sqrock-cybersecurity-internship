@@ -155,17 +155,27 @@ python3 src/email_harvester.py
 ---
 
 # 📸 Screenshots
-Professional Dashboard
-https://screenshots/webapp_home.png
 
-Harvest Results
-https://screenshots/webapp_results.png
+### Professional Dashboard
+<p align="center">
+  <img src="Dashboard.png" alt="Dashboard" width="90%">
+  <br>
+  <sub>Professional dark theme dashboard</sub>
+</p>
 
-Email Display
-https://screenshots/webapp_new_design.png
+### Harvest Results
+<p align="center">
+  <img src="Assessment.png" alt="Results" width="90%">
+  <br>
+  <sub>Email harvesting results display</sub>
+</p>
 
-Full Interface
-https://screenshots/webapp_full.png
+### Analyze Logs
+<p align="center">
+  <img src="Logs.png" alt="Email Display" width="90%">
+  <br>
+  <sub>Discovered emails with pattern analysis</sub>
+</p>
 
 ---
 
