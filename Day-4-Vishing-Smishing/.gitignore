@@ -1,0 +1,498 @@
+# ============================================
+# Python
+# ============================================
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.pyd
+*.pyo
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# PyInstaller
+*.manifest
+*.spec
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+cover/
+
+# Translations
+*.mo
+*.pot
+
+# Django stuff:
+*.log
+local_settings.py
+db.sqlite3
+db.sqlite3-journal
+
+# Flask stuff:
+instance/
+.webassets-cache
+
+# Scrapy stuff:
+.scrapy
+
+# Sphinx documentation
+docs/_build/
+
+# PyBuilder
+.pybuilder/
+target/
+
+# Jupyter Notebooks
+.ipynb_checkpoints
+
+# IPython
+profile_default/
+ipython_config.py
+
+# pyenv
+.python-version
+
+# pipenv
+Pipfile.lock
+
+# poetry
+poetry.lock
+
+# pdm
+.pdm.toml
+
+# PEP 582
+__pypackages__/
+
+# Celery stuff
+celerybeat-schedule
+celerybeat.pid
+
+# SageMath parsed files
+*.sage.py
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Spyder project settings
+.spyderproject
+.spyproject
+
+# Rope project settings
+.ropeproject
+
+# mkdocs documentation
+/site
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Pyre type checker
+.pyre/
+
+# pytype static type analyzer
+.pytype/
+
+# ============================================
+# Virtual Environment
+# ============================================
+
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+pythonenv*
+
+# ============================================
+# IDE / Editor
+# ============================================
+
+# VS Code
+.vscode/
+*.code-workspace
+
+# PyCharm
+.idea/
+*.iml
+*.iws
+.idea/
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# Atom
+.atom/
+*.atom
+
+# Vim
+*.swp
+*.swo
+*~
+*.un~
+
+# Emacs
+*~
+\#*\#
+/.emacs.desktop
+/.emacs.desktop.lock
+
+# ============================================
+# Operating System
+# ============================================
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+*.cab
+*.msi
+*.msm
+*.msp
+
+# Linux
+.directory
+*.tmp
+*.temp
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+._*
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+
+# ============================================
+# Project Specific - Day 4
+# ============================================
+
+# Generated reports
+reports/
+*.md
+!README.md
+!LICENSE.md
+!*.md
+
+# Data files
+data/
+*.json
+!*.json
+
+# Screenshots (keep structure only)
+screenshots/
+*.png
+!*.png
+
+# Log files
+*.log
+logs/
+*.log.*
+
+# Backup files
+*.bak
+*.backup
+*.old
+*.orig
+
+# Secret files
+*.secret
+*.key
+*.pem
+*.crt
+*.csr
+*.p12
+*.pfx
+*.cer
+*.der
+config.py
+secrets.py
+credentials.json
+*.env
+
+# Database files
+*.db
+*.sqlite
+*.sqlite3
+*.db3
+
+# ============================================
+# Security / Scanning
+# ============================================
+
+# Bandit
+bandit-report.json
+
+# Safety
+safety-report.json
+
+# Pylint
+pylint-report.json
+
+# ============================================
+# Docker
+# ============================================
+
+docker-compose.override.yml
+.dockerignore
+
+# ============================================
+# Terraform
+# ============================================
+
+*.tfstate
+*.tfstate.*
+.terraform/
+
+# ============================================
+# Ansible
+# ============================================
+
+*.retry
+ansible.log
+
+# ============================================
+# CI/CD
+# ============================================
+
+.github/
+!.github/workflows/
+.gitlab/
+!.gitlab-ci.yml
+
+# ============================================
+# Temporary Files
+# ============================================
+
+*.tmp
+*.temp
+*.swp
+*.swo
+*~
+*.cache
+*.pid
+*.seed
+*.pid.lock
+*.sock
+*.socket
+
+# ============================================
+# Archives
+# ============================================
+
+*.zip
+*.tar.gz
+*.tgz
+*.rar
+*.7z
+*.bz2
+*.xz
+*.gz
+
+# ============================================
+# Media
+# ============================================
+
+*.mp4
+*.avi
+*.mov
+*.wmv
+*.flv
+*.mkv
+*.mp3
+*.wav
+*.flac
+*.aac
+
+# ============================================
+# Node.js (if applicable)
+# ============================================
+
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+lerna-debug.log*
+
+# ============================================
+# Next.js
+# ============================================
+
+.next/
+out/
+dist/
+
+# ============================================
+# Nuxt.js
+# ============================================
+
+.nuxt/
+dist/
+
+# ============================================
+# Gatsby
+# ============================================
+
+public/
+.cache/
+
+# ============================================
+# Hugo
+# ============================================
+
+resources/
+public/
+.hugo_build.lock
+
+# ============================================
+# PHP
+# ============================================
+
+*.log
+*.cache
+*.sql
+*.sql.gz
+
+# ============================================
+# C++
+# ============================================
+
+*.o
+*.obj
+*.exe
+*.dll
+*.so
+*.dylib
+*.a
+*.lib
+*.out
+
+# ============================================
+# Java
+# ============================================
+
+*.class
+*.jar
+*.war
+*.ear
+*.jks
+*.keystore
+*.truststore
+target/
+.classpath
+.project
+.settings/
+
+# ============================================
+# Rust
+# ============================================
+
+target/
+Cargo.lock
+
+# ============================================
+# Go
+# ============================================
+
+*.exe
+*.test
+*.out
+vendor/
+go.sum
+
+# ============================================
+# Ruby
+# ============================================
+
+*.gem
+*.rbc
+/.bundle/
+/vendor/bundle/
+Gemfile.lock
+
+# ============================================
+# Swift
+# ============================================
+
+*.xcodeproj
+*.xcworkspace
+*.xcuserstate
+Pods/
+Podfile.lock
+DerivedData/
+
+# ============================================
+# Elixir
+# ============================================
+
+_build/
+deps/
+*.ez
+*.beam
+
+# ============================================
+# Crystal
+# ============================================
+
+lib/
+bin/
+shards.lock
+
+# ============================================
+# Nim
+# ============================================
+
+nimcache/
+*.nimcache
