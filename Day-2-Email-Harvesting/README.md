@@ -13,22 +13,7 @@
 
 ---
 
-## 📋 Table of Contents
-- [Overview](#overview)
-- [Features](#features)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Detection Patterns](#detection-patterns)
-- [Test Sites](#test-sites)
-- [Screenshots](#screenshots)
-- [Project Structure](#project-structure)
-- [Technologies](#technologies)
-- [Ethical Guidelines](#ethical-guidelines)
-- [Troubleshooting](#troubleshooting)
-
----
-
-## 🎯 Overview
+# 🎯 Overview
 
 This is a professional **Email Harvester** built as Day 2 of the SQR CyberSecurity Internship program. It extracts emails from websites ethically using pattern matching and BeautifulSoup.
 
@@ -44,7 +29,7 @@ Email harvesting is the process of collecting email addresses from public source
 
 ---
 
-## ✨ Features
+# ✨ Features
 
 ### 🔍 Email Harvester
 
@@ -69,7 +54,7 @@ Email harvesting is the process of collecting email addresses from public source
 
 ---
 
-## 🚀 Installation
+# 🚀 Installation
 
 ### Prerequisites
 - Python 3.9+
@@ -91,56 +76,85 @@ pip install requests beautifulsoup4 Flask Flask-Cors
 
 # Run the web application
 python3 web_app/app.py
-
 # Open browser: http://localhost:5001
-Command Line Usage
-bash
+```
+
+### Command Line Usage
+```bash
 # Run the harvester directly
 python3 src/email_harvester.py
 # Enter URL when prompted
-💻 Usage
-Web Interface
-Open browser: http://localhost:5001
+```
+---
+# 💻 Usage
 
-Enter URL (e.g., https://scrapinghub.com)
+### Web Interface
 
-Click "Harvest"
+1. Open browser: http://localhost:5001
 
-View extracted emails!
+2. Enter URL (e.g., https://scrapinghub.com)
 
-Command Line
-bash
+3. Click "Harvest"
+
+4. View extracted emails!
+
+### Command Line
+```bash
 python3 src/email_harvester.py
 # Enter URL when prompted
 # Reports saved in reports/ folder
-🧪 Test Sites
-Sites with Guaranteed Emails
-Site	URL	Expected Result
-ScrapingHub	https://scrapinghub.com	✅ marketing@zyte.com
-Zyte	https://www.zyte.com	✅ contact@zyte.com
-Real Python	https://realpython.com	✅ info@realpython.com
-Scrapy	https://scrapy.org	✅ Multiple emails
-Sites for Testing
-Site	URL	Expected Result
-Example	https://example.com	❌ No emails (safe test)
-MIT	https://mit.edu	⚠️ May find faculty emails
-Stanford	https://stanford.edu	⚠️ May find faculty emails
-📊 Detection Patterns
-Email Patterns Detected
-Pattern	Example	Description
-Standard	user@domain.com	Regular email format
-Mailto	mailto:user@domain.com	Email in mailto link
-Obfuscated	user[at]domain[dot]com	Protected email format
-With Plus	user+alias@domain.com	Email with plus addressing
-With Dash	user-name@domain.com	Email with hyphens
-Username Patterns
-Pattern	Example	Description
-first.last	john.doe@company.com	First name + dot + last name
-first_last	john_doe@company.com	First name + underscore + last name
-initials	jd@company.com	Two-letter initials
-numeric	123456@company.com	Numeric username
-single_word	johndoe@company.com	Single word username
-📸 Screenshots
+```
+---
+# 🧪 Test Sites
+
+### Sites with Guaranteed Emails
+
+| Site | URL | Expected Result |
+|------|-----|-----------------|
+| **ScrapingHub** | `https://scrapinghub.com` | ✅ `marketing@zyte.com` |
+| **Zyte** | `https://www.zyte.com` | ✅ `contact@zyte.com` |
+| **Real Python** | `https://realpython.com` | ✅ `info@realpython.com` |
+| **Scrapy** | `https://scrapy.org` | ✅ Multiple emails |
+
+### Sites for Testing
+
+| Site | URL | Expected Result |
+|------|-----|-----------------|
+| **Example** | `https://example.com` | ❌ No emails (safe test) |
+| **MIT** | `https://mit.edu` | ⚠️ May find faculty emails |
+| **Stanford** | `https://stanford.edu` | ⚠️ May find faculty emails |
+| **Harvard** | `https://harvard.edu` | ⚠️ May find faculty emails |
+
+---
+
+## 📊 Detection Patterns
+
+### Email Patterns Detected
+
+| Pattern | Example | Description |
+|---------|---------|-------------|
+| **Standard** | `user@domain.com` | Regular email format |
+| **Mailto** | `mailto:user@domain.com` | Email in mailto link |
+| **Obfuscated** | `user[at]domain[dot]com` | Protected email format |
+| **With Plus** | `user+alias@domain.com` | Email with plus addressing |
+| **With Dash** | `user-name@domain.com` | Email with hyphens |
+| **With Underscore** | `user_name@domain.com` | Email with underscores |
+
+### Username Patterns
+
+| Pattern | Example | Description |
+|---------|---------|-------------|
+| **first.last** | `john.doe@company.com` | First name + dot + last name |
+| **first_last** | `john_doe@company.com` | First name + underscore + last name |
+| **initials** | `jd@company.com` | Two-letter initials |
+| **numeric** | `123456@company.com` | Numeric username |
+| **single_word** | `johndoe@company.com` | Single word username |
+| **first.middle.last** | `john.r.doe@company.com` | Full name with dots |
+| **mixed_case** | `JohnDoe@company.com` | Mixed case username |
+
+---
+
+# 📸 Screenshots
 Professional Dashboard
 https://screenshots/webapp_home.png
 
@@ -153,8 +167,10 @@ https://screenshots/webapp_new_design.png
 Full Interface
 https://screenshots/webapp_full.png
 
-📁 Project Structure
-text
+---
+
+# 📁 Project Structure
+```text
 Day-2-Email-Harvesting/
 │
 ├── 📁 src/
@@ -176,87 +192,52 @@ Day-2-Email-Harvesting/
 ├── 📄 README.md                        # This file
 ├── 📄 .gitignore                       # Git ignore rules
 └── 📄 requirements.txt                 # Dependencies
-🛠️ Technologies
-Backend
-Technology	Purpose
-Python 3.9+	Core language
-Flask	Web framework
-BeautifulSoup4	HTML parsing
-requests	HTTP requests
-Frontend
-Technology	Purpose
-HTML5/CSS3	Structure & styling
-JavaScript	Dynamic functionality
-Inter Font	Professional typography
-⚖️ Ethical Guidelines
-⚠️ IMPORTANT: Educational Use Only
-This tool is for educational purposes in authorized environments only.
+```
+---
+# 🛠️ Technologies
 
-Rules:
-✅ Use only on your own domains or authorized test environments
+### Backend
 
-✅ All data must be anonymized after analysis
+| Technology | Purpose |
+|------------|---------|
+| **Python 3.9+** | Core programming language |
+| **Flask** | Web framework |
+| **BeautifulSoup4** | HTML parsing for email extraction |
+| **requests** | HTTP requests for web scraping |
 
-✅ Never target real users or organizations
+### Frontend
 
-✅ Follow all applicable laws (IT Act 2000, CFAA, GDPR)
+| Technology | Purpose |
+|------------|---------|
+| **HTML5/CSS3** | Structure and styling |
+| **JavaScript** | Dynamic functionality |
+| **Inter Font** | Professional typography |
+---
 
-Authorized Environments:
-✅ Local VMs (VirtualBox, VMware)
+# 📊 Example Results
 
-✅ Lab environments with written authorization
-
-✅ Your own domains
-
-✅ CTF/Training platforms
-
-🚨 Troubleshooting
-Port 5001 Already in Use
-bash
-sudo fuser -k 5001/tcp
-python3 web_app/app.py
-Module Not Found
-bash
-pip install requests beautifulsoup4 Flask Flask-Cors
-No Emails Found
-Try: https://scrapinghub.com
-
-Make sure URL is correct
-
-Check internet connection
-
-Virtual Environment Issues
-bash
-rm -rf venv
-python3 -m venv venv
-source venv/bin/activate
-pip install requests beautifulsoup4 Flask Flask-Cors
-📊 Example Results
-ScrapingHub.com
-text
+### ScrapingHub.com
+```text
 ✅ Harvest completed successfully!
 📧 Emails Found: 1
 📧 Sample Emails Found:
   - marketing@zyte.com
+```
 
-🌐 Top Domains:
-  - zyte.com: 1 emails
-Example.com
-text
+### 🌐 Top Domains:
+
+- zyte.com: 1 emails
+
+### Example.com
+
+```text
 ✅ Harvest completed successfully!
 📧 Emails Found: 0
 📊 Report Generated: reports/email_harvest_[timestamp].html
-📝 License
-This project is licensed under the MIT License.
+```
+---
 
-🔗 Quick Links
-Link	Description
-Main Repository	Complete project
-Day 1: OSINT	OSINT Scanner
-Day 3: Phishing	Coming Soon
-<div align="center">
-Made with ❤️ by SQR CyberSecurity Interns
 
-Last Updated: September 2024
 
-</div> ```
+
+
