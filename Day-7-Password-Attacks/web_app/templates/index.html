@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Attack Simulator - SQR CyberSecurity</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="dashboard">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-left">
+                <span class="logo-icon">🔐</span>
+                <span class="logo-text">PASSWORD SECURITY</span>
+            </div>
+            <div class="header-right">
+                <span class="status-badge">● LIVE</span>
+                <span class="version-badge">v2.0</span>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main>
+            <!-- Input Section -->
+            <div class="input-section">
+                <div class="input-card">
+                    <h2>🔍 Password Security Analysis</h2>
+                    <p>Test a username and password combination</p>
+                    <div class="input-group">
+                        <input type="text" id="usernameInput" placeholder="Username" class="input-field">
+                        <input type="password" id="passwordInput" placeholder="Password" class="input-field">
+                        <button id="analyzeBtn" class="analyze-btn">Analyze</button>
+                    </div>
+                    <div class="quick-suggestions">
+                        <span>Test: </span>
+                        <button class="suggestion-btn" data-username="admin" data-password="password123">admin/password123</button>
+                        <button class="suggestion-btn" data-username="user" data-password="admin">user/admin</button>
+                        <button class="suggestion-btn" data-username="test" data-password="123456">test/123456</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Results -->
+            <div id="resultsSection" class="results-section hidden">
+                <!-- Password Strength -->
+                <div class="strength-card">
+                    <div class="strength-header">
+                        <span>Password Strength</span>
+                        <span id="strengthBadge" class="strength-badge">WEAK</span>
+                    </div>
+                    <div class="strength-bar">
+                        <div id="strengthBar" class="strength-fill" style="width: 0%"></div>
+                    </div>
+                    <div class="strength-details">
+                        <span>Length: <strong id="pwdLength">0</strong></span>
+                        <span>Score: <strong id="pwdScore">0/10</strong></span>
+                    </div>
+                </div>
+
+                <!-- Stats Grid -->
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <span class="stat-number" id="attemptsCount">0</span>
+                        <span class="stat-label">Attempts</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number" id="foundStatus">No</span>
+                        <span class="stat-label">Password Found</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number" id="timeTaken">0s</span>
+                        <span class="stat-label">Time Taken</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number" id="rateLimitStatus">Off</span>
+                        <span class="stat-label">Rate Limit</span>
+                    </div>
+                </div>
+
+                <!-- Two Column -->
+                <div class="two-column">
+                    <div class="card">
+                        <h3>⚠️ Issues Found</h3>
+                        <ul id="issuesList" class="info-list"></ul>
+                    </div>
+                    <div class="card">
+                        <h3>💡 Recommendations</h3>
+                        <ul id="recommendationsList" class="info-list"></ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Error -->
+            <div id="errorSection" class="error-section hidden">
+                <div class="error-card">
+                    <span class="error-icon">⚠️</span>
+                    <h3>Analysis Failed</h3>
+                    <p id="errorMessage">Please try again.</p>
+                    <button id="retryBtn" class="retry-btn">Try Again</button>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>SQR CyberSecurity Internship — Day 7: Password Attacks</p>
+            <p class="footer-sub">🔒 Educational Use Only | All scans with explicit authorization</p>
+        </footer>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
