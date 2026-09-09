@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spear Phishing Engine - SQR CyberSecurity</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-brand">
+                <span class="brand-icon">📧</span>
+                <span class="brand-text">PhishEngine</span>
+            </div>
+            <nav class="sidebar-nav">
+                <a href="#" class="nav-item active">📥 Inbox</a>
+                <a href="#" class="nav-item">📤 Sent</a>
+                <a href="#" class="nav-item">📁 Templates</a>
+                <a href="#" class="nav-item">⚙️ Settings</a>
+            </nav>
+            <div class="sidebar-footer">
+                <span class="status-dot"></span>
+                <span>Awareness Mode</span>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Header -->
+            <header class="header">
+                <div class="header-left">
+                    <h1>📧 Spear Phishing Template Engine</h1>
+                    <span class="header-badge">🔒 Lab Only</span>
+                </div>
+                <div class="header-right">
+                    <span class="header-status">● Training Mode</span>
+                </div>
+            </header>
+
+            <!-- Controls -->
+            <div class="controls">
+                <div class="target-selector">
+                    <label>Target:</label>
+                    <select id="targetSelect">
+                        {% for target in targets %}
+                        <option value="{{ loop.index0 }}">{{ target.name }} - {{ target.position }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="template-selector">
+                    <label>Template:</label>
+                    <select id="templateSelect">
+                        <option value="account_verification">Account Verification</option>
+                        <option value="password_reset">Password Reset</option>
+                        <option value="security_alert">Security Alert</option>
+                        <option value="document_sharing">Document Sharing</option>
+                        <option value="invoice_alert">Invoice Alert</option>
+                        <option value="all">Generate All</option>
+                    </select>
+                </div>
+                <button id="generateBtn" class="generate-btn">Generate Email</button>
+            </div>
+
+            <!-- Email Preview -->
+            <div class="email-preview" id="emailPreview">
+                <div class="preview-header">
+                    <span class="preview-title">📧 Email Preview</span>
+                    <span class="preview-subtitle">Awareness Training - Do Not Forward</span>
+                </div>
+                <div class="email-content" id="emailContent">
+                    <div class="empty-state">
+                        <span class="empty-icon">📩</span>
+                        <p>Select a target and template to generate</p>
+                        <p class="empty-sub">Click "Generate Email" to preview</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Red Flags -->
+            <div class="red-flags" id="redFlags">
+                <div class="flags-header">
+                    <span>🚨 Red Flags to Watch For</span>
+                </div>
+                <div class="flags-content" id="flagsContent">
+                    <p class="flags-empty">Generate an email to see red flags</p>
+                </div>
+            </div>
+
+            <!-- Defense Tips -->
+            <div class="defense-tips">
+                <div class="tips-header">
+                    <span>🛡️ Defense Tips</span>
+                </div>
+                <div class="tips-content" id="tipsContent">
+                    <ul>
+                        <li>✅ Always verify sender address carefully</li>
+                        <li>✅ Hover over links before clicking</li>
+                        <li>✅ Never share passwords via email</li>
+                        <li>✅ Check with IT/Security directly</li>
+                        <li>✅ Use official internal communication channels</li>
+                    </ul>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
