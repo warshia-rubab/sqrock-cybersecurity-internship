@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Target Profile Builder - SQR CyberSecurity</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="dashboard">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-left">
+                <span class="logo-icon">🎯</span>
+                <span class="logo-text">TARGET PROFILE</span>
+            </div>
+            <div class="header-right">
+                <span class="status-badge">● LIVE</span>
+                <span class="version-badge">v2.0</span>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Search Section -->
+            <div class="search-section">
+                <div class="search-card">
+                    <h2>🔍 Target Analysis</h2>
+                    <p>Enter a GitHub username to build a comprehensive target profile</p>
+                    <div class="input-group">
+                        <input type="text" id="usernameInput" placeholder="Enter GitHub username (e.g., torvalds)" class="search-input">
+                        <button id="searchButton" class="search-btn">Analyze</button>
+                    </div>
+                    <div class="quick-links">
+                        <span>Test Profiles: </span>
+                        <button class="quick-btn" data-username="torvalds">Linus Torvalds</button>
+                        <button class="quick-btn" data-username="google">Google</button>
+                        <button class="quick-btn" data-username="microsoft">Microsoft</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Results Dashboard -->
+            <div id="resultsSection" class="results-section hidden">
+                <!-- Profile Header -->
+                <div class="profile-header">
+                    <div class="profile-avatar">
+                        <span id="profileIcon">👤</span>
+                    </div>
+                    <div class="profile-info">
+                        <h2 id="profileName">-</h2>
+                        <p id="profileBio">-</p>
+                        <div class="profile-stats">
+                            <span id="statRepos">📁 0</span>
+                            <span id="statFollowers">👥 0</span>
+                            <span id="statFollowing">📌 0</span>
+                        </div>
+                    </div>
+                    <div class="risk-badge" id="riskBadge">
+                        <span class="risk-label">RISK</span>
+                        <span class="risk-value" id="riskScore">0</span>
+                    </div>
+                </div>
+
+                <!-- Stats Grid -->
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <span class="stat-number" id="exposureLevel">-</span>
+                        <span class="stat-label">Exposure Level</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number" id="infoExposed">0</span>
+                        <span class="stat-label">Info Points Exposed</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number" id="techStackCount">0</span>
+                        <span class="stat-label">Tech Stack Items</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number" id="threatVectors">0</span>
+                        <span class="stat-label">Threat Vectors</span>
+                    </div>
+                </div>
+
+                <!-- Two Column Layout -->
+                <div class="two-column">
+                    <!-- Left Column: Personal Info & Tech Stack -->
+                    <div class="column">
+                        <div class="card">
+                            <h3>👤 Personal Information</h3>
+                            <ul id="personalInfoList" class="info-list"></ul>
+                        </div>
+                        <div class="card">
+                            <h3>🔧 Technical Stack</h3>
+                            <ul id="techStackList" class="info-list"></ul>
+                        </div>
+                        <div class="card">
+                            <h3>👥 Collaborators</h3>
+                            <ul id="collaboratorsList" class="info-list"></ul>
+                        </div>
+                    </div>
+
+                    <!-- Right Column: Threat Vectors & Recommendations -->
+                    <div class="column">
+                        <div class="card">
+                            <h3>🚨 Threat Vectors</h3>
+                            <ul id="threatVectorsList" class="info-list"></ul>
+                        </div>
+                        <div class="card">
+                            <h3>💡 Recommendations</h3>
+                            <ul id="recommendationsList" class="info-list"></ul>
+                        </div>
+                        <div class="card">
+                            <h3>🎯 Attacker Perspective</h3>
+                            <ul id="attackerViewList" class="info-list"></ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Error Section -->
+            <div id="errorSection" class="error-section hidden">
+                <div class="error-card">
+                    <span class="error-icon">⚠️</span>
+                    <h3>Profile Not Found</h3>
+                    <p id="errorMessage">The username could not be found. Please check and try again.</p>
+                    <button id="retryButton" class="retry-btn">Try Again</button>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>SQR CyberSecurity Internship — Day 5: Target Profile Builder</p>
+            <p class="footer-sub">🔒 Educational Use Only | All scans with explicit authorization</p>
+        </footer>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
