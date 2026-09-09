@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bait Link</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="dashboard" style="justify-content: center; align-items: center; text-align: center; min-height: 100vh;">
+        <div style="max-width: 600px;">
+            <span style="font-size: 80px; display: block; margin-bottom: 20px;">🎯</span>
+            <h1 style="font-family: 'Orbitron', monospace; font-size: 28px; color: #ef4444; margin-bottom: 12px;">
+                BAIT CLICKED!
+            </h1>
+            <p style="color: #4a5a7a; font-size: 16px; margin-bottom: 8px;">
+                This was a simulated bait link for security awareness training.
+            </p>
+            
+            <div style="background: rgba(10,14,30,0.8); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.03); border-radius: 16px; padding: 24px; margin-top: 20px; text-align: left;">
+                <h3 style="color: #e0e8f0; font-size: 16px; margin-bottom: 12px;">📋 Attack Details</h3>
+                <p style="color: #8a9aaa; font-size: 14px; padding: 4px 0;">
+                    <strong style="color: #4a5a7a;">Bait Type:</strong> {{ log.bait_name }}
+                </p>
+                <p style="color: #8a9aaa; font-size: 14px; padding: 4px 0;">
+                    <strong style="color: #4a5a7a;">Severity:</strong> <span style="color: #ef4444;">{{ log.severity }}</span>
+                </p>
+                <p style="color: #8a9aaa; font-size: 14px; padding: 4px 0;">
+                    <strong style="color: #4a5a7a;">IP Address:</strong> {{ log.ip }}
+                </p>
+                <p style="color: #8a9aaa; font-size: 14px; padding: 4px 0;">
+                    <strong style="color: #4a5a7a;">Location:</strong> {{ log.location }}
+                </p>
+                <p style="color: #8a9aaa; font-size: 14px; padding: 4px 0;">
+                    <strong style="color: #4a5a7a;">Time:</strong> {{ log.timestamp }}
+                </p>
+            </div>
+            
+            <div style="background: rgba(239,68,68,0.05); border: 1px solid rgba(239,68,68,0.1); border-radius: 12px; padding: 16px; margin-top: 16px;">
+                <p style="color: #ef4444; font-size: 14px;">
+                    🚨 This is an educational demonstration. In a real attack, you would have been compromised.
+                </p>
+            </div>
+            
+            <div style="margin-top: 20px;">
+                <a href="/" style="background: linear-gradient(135deg, #f59e0b, #ef4444); border: none; padding: 12px 32px; border-radius: 10px; color: #fff; font-weight: 600; text-decoration: none; display: inline-block; transition: all 0.3s ease;">
+                    ← Back to Dashboard
+                </a>
+            </div>
+        </div>
+        
+        <footer class="footer" style="margin-top: 40px; width: 100%;">
+            <p>SQR CyberSecurity Internship — Day 10: Baiting & Watering Hole</p>
+            <p class="footer-sub">🔒 Educational Use Only</p>
+        </footer>
+    </div>
+</body>
+</html>

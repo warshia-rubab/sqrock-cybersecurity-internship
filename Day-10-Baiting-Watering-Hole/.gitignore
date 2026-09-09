@@ -1,0 +1,30 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+venv/
+env/
+*.log
+
+# Data
+*.json
+*.md
+!README.md
+reports/*.md
+data/*.json
+
+# Screenshots
+screenshots/*.png
+!screenshots/.gitkeep
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Secrets
+*.env
+*.secret
+config.py

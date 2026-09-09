@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Baiting & Watering Hole</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="dashboard">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-left">
+                <span class="logo-icon">🎯</span>
+                <span class="logo-text">THREAT INTELLIGENCE</span>
+            </div>
+            <div class="header-right">
+                <span class="status-badge">● LIVE</span>
+                <span class="version-badge">v2.0</span>
+            </div>
+        </header>
+
+        <!-- Stats -->
+        <div class="stats-row" id="statsRow">
+            <div class="stat-card">
+                <span class="stat-number" id="totalAttacks">0</span>
+                <span class="stat-label">Total Attacks</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-number" id="uniqueIPs">0</span>
+                <span class="stat-label">Unique IPs</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-number" id="criticalAttacks">0</span>
+                <span class="stat-label">Critical</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-number" id="baitLinks">0</span>
+                <span class="stat-label">Bait Links</span>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <main>
+            <!-- Bait Section -->
+            <div class="section">
+                <div class="section-header">
+                    <h2>💾 Generate Bait Links</h2>
+                    <p>Create honeypot links to track attackers</p>
+                </div>
+                <div class="bait-buttons">
+                    <button class="bait-btn" data-type="usb_drop">
+                        <span class="icon">💾</span>
+                        <span>USB Drop</span>
+                        <span class="severity high">HIGH</span>
+                    </button>
+                    <button class="bait-btn" data-type="free_software">
+                        <span class="icon">📥</span>
+                        <span>Free Software</span>
+                        <span class="severity medium">MEDIUM</span>
+                    </button>
+                    <button class="bait-btn" data-type="free_music">
+                        <span class="icon">🎵</span>
+                        <span>Free Music</span>
+                        <span class="severity medium">MEDIUM</span>
+                    </button>
+                    <button class="bait-btn" data-type="free_movie">
+                        <span class="icon">🎬</span>
+                        <span>Free Movie</span>
+                        <span class="severity high">HIGH</span>
+                    </button>
+                    <button class="bait-btn" data-type="free_gift">
+                        <span class="icon">🎁</span>
+                        <span>Free Gift</span>
+                        <span class="severity critical">CRITICAL</span>
+                    </button>
+                </div>
+                <div id="baitResult" class="bait-result hidden">
+                    <div class="bait-info">
+                        <span class="bait-icon" id="baitIcon">🎁</span>
+                        <div>
+                            <h4 id="baitName">Free Gift</h4>
+                            <p id="baitDesc">Fake gift giveaway link</p>
+                        </div>
+                        <span class="bait-id" id="baitId">ID: abc123</span>
+                    </div>
+                    <div class="bait-url">
+                        <span>🔗 <span id="baitUrl">/bait/abc123</span></span>
+                        <button id="copyBaitBtn" class="copy-btn">📋 Copy</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Watering Hole Section -->
+            <div class="section">
+                <div class="section-header">
+                    <h2>🌊 Watering Hole Simulation</h2>
+                    <p>Simulate compromised trusted websites</p>
+                </div>
+                <div class="waterhole-buttons">
+                    <button class="waterhole-btn" data-target="tech_news_site">
+                        <span>📰</span> Tech News Site
+                    </button>
+                    <button class="waterhole-btn" data-target="industry_blog">
+                        <span>📝</span> Industry Blog
+                    </button>
+                    <button class="waterhole-btn" data-target="professional_forum">
+                        <span>💬</span> Professional Forum
+                    </button>
+                    <button class="waterhole-btn" data-target="social_media">
+                        <span>📱</span> Social Media
+                    </button>
+                    <button class="waterhole-btn" data-target="job_site">
+                        <span>💼</span> Job Site
+                    </button>
+                </div>
+                <div id="waterholeResult" class="waterhole-result hidden">
+                    <div class="waterhole-info">
+                        <span class="waterhole-icon">🌊</span>
+                        <div>
+                            <h4 id="whTarget">Tech News Site</h4>
+                            <p id="whDesc">Popular tech news site compromised</p>
+                        </div>
+                        <span class="wh-risk" id="whRisk">HIGH</span>
+                    </div>
+                    <div class="wh-details">
+                        <div class="wh-flags">
+                            <h5>🚨 Red Flags</h5>
+                            <ul id="whFlags"></ul>
+                        </div>
+                        <div class="wh-tips">
+                            <h5>🛡️ Defense Tips</h5>
+                            <ul id="whTips"></ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Attack Logs -->
+            <div class="section">
+                <div class="section-header">
+                    <h2>📊 Attack Logs</h2>
+                    <p>Real-time attack monitoring</p>
+                    <button id="refreshLogsBtn" class="refresh-btn">🔄 Refresh</button>
+                </div>
+                <div id="logsContainer" class="logs-container">
+                    <p class="logs-empty">No attacks logged yet. Generate a bait link to start.</p>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>SQR CyberSecurity Internship — Day 10: Baiting & Watering Hole</p>
+            <p class="footer-sub">🔒 Educational Use Only | All scans with explicit authorization</p>
+        </footer>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
