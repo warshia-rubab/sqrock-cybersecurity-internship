@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fake Profile Detector</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="dashboard">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-left">
+                <span class="logo-icon">👤</span>
+                <span class="logo-text">SOCIAL ANALYTICS</span>
+            </div>
+            <div class="header-right">
+                <span class="status-badge">● LIVE</span>
+                <span class="version-badge">v2.0</span>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main>
+            <!-- Input Section -->
+            <div class="input-section">
+                <div class="input-card">
+                    <h2>👤 Fake Profile Detection</h2>
+                    <p>Analyze social media profiles for fake/bot behavior</p>
+                    <div class="profile-buttons">
+                        <button class="profile-btn" data-index="0">
+                            <span class="icon">✅</span>
+                            <span>Real Profile</span>
+                            <span class="badge low">LOW RISK</span>
+                        </button>
+                        <button class="profile-btn" data-index="1">
+                            <span class="icon">🤖</span>
+                            <span>Bot Profile</span>
+                            <span class="badge critical">CRITICAL</span>
+                        </button>
+                        <button class="profile-btn" data-index="2">
+                            <span class="icon">⚠️</span>
+                            <span>Suspicious Profile</span>
+                            <span class="badge high">HIGH RISK</span>
+                        </button>
+                    </div>
+                    <div class="impersonation-section">
+                        <button id="impersonationBtn" class="impersonation-btn">
+                            🔍 Detect Impersonation
+                        </button>
+                        <p class="impersonation-hint">Compares Profile 1 (Real) vs Profile 2 (Suspicious)</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Results -->
+            <div id="resultsSection" class="results-section hidden">
+                <!-- Profile Summary -->
+                <div class="profile-summary">
+                    <div class="profile-avatar">
+                        <span id="profileIcon">👤</span>
+                    </div>
+                    <div class="profile-details">
+                        <h3 id="profileName">-</h3>
+                        <p id="profileUsername">@username</p>
+                        <div class="profile-metrics">
+                            <span id="metricAge">📅 0 days</span>
+                            <span id="metricFollowers">👥 0</span>
+                            <span id="metricFollowing">📌 0</span>
+                            <span id="metricPosts">📝 0</span>
+                        </div>
+                    </div>
+                    <div class="risk-badge" id="riskBadge">
+                        <span class="risk-label">FAKE SCORE</span>
+                        <span class="risk-value" id="fakeScore">0</span>
+                    </div>
+                </div>
+
+                <!-- Heuristics Grid -->
+                <div class="heuristics-section">
+                    <h3>🔍 Behavioral Heuristics</h3>
+                    <div class="heuristics-grid" id="heuristicsGrid"></div>
+                </div>
+
+                <!-- Bot Signals -->
+                <div class="signals-section">
+                    <h3>🤖 Bot Signals Detected</h3>
+                    <ul id="signalsList" class="info-list"></ul>
+                </div>
+
+                <!-- Issues & Recommendations -->
+                <div class="two-column">
+                    <div class="card">
+                        <h3>⚠️ Issues Found</h3>
+                        <ul id="issuesList" class="info-list"></ul>
+                    </div>
+                    <div class="card">
+                        <h3>💡 Recommendations</h3>
+                        <ul id="recommendationsList" class="info-list"></ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Error -->
+            <div id="errorSection" class="error-section hidden">
+                <div class="error-card">
+                    <span class="error-icon">⚠️</span>
+                    <h3>Analysis Failed</h3>
+                    <p id="errorMessage">Please try again.</p>
+                    <button id="retryBtn" class="retry-btn">Try Again</button>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>SQR CyberSecurity Internship — Day 9: Social Media Impersonation</p>
+            <p class="footer-sub">🔒 Educational Use Only | All scans with explicit authorization</p>
+        </footer>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
